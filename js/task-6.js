@@ -6,10 +6,10 @@ function getRandomHexColor() {
 
 function createBoxes(amount) {
   const boxesContainer = document.querySelector("#boxes");
-  boxesContainer.innerHTML = ""; // Clear previous boxes
+  boxesContainer.innerHTML = "";
 
   for (let i = 0; i < amount; i++) {
-    const boxSize = 30 + i * 10; // Increase size by 10 pixels for each box
+    const boxSize = 30 + i * 10; 
     const boxColor = getRandomHexColor();
 
     const box = document.createElement("div");
