@@ -1,3 +1,6 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const gallery = document.querySelector('.gallery');
+
 const images = [
   {
     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -28,18 +31,17 @@ const images = [
   },
 ];
 
-const galleryList = document.querySelector('.gallery');
-
-  const galleryItems = images.map(image => {
-    const listItem = document.createElement('li');
-    listItem.classList.add('gallery-item');
-
+const galleryItems = images.map(image => {
+    const li = document.createElement('li');
+    li.classList.add('gallery-item'); // Додавання CSS-класу
     const img = document.createElement('img');
+    
     img.src = image.url;
     img.alt = image.alt;
-
-    listItem.appendChild(img);
-    return listItem;
+    
+    li.appendChild(img);
+    return li;
   });
 
-  galleryList.append(...galleryItems);
+  gallery.append(...galleryItems);
+});
