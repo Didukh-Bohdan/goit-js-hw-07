@@ -18,7 +18,7 @@ const images = [
 
 const galleryItems = images.map(image => {
     const li = document.createElement('li');
-    li.classList.add('gallery-item'); // Додавання CSS-класу
+    li.classList.add('gallery-item'); 
     const img = document.createElement('img');
     
     img.src = image.url;
