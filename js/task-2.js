@@ -1,9 +1,6 @@
-  document.addEventListener('DOMContentLoaded', () => {
-  const gallery = document.querySelector('.gallery');
-  
-  const images = [
-    {
-      url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+const images = [
+  {
+    url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     alt: 'White and Black Long Fur Cat',
   },
   {
@@ -28,19 +25,21 @@
     url:
       'https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     alt: 'Zebras on Zebra',
-    },
-  ];
+  },
+];
+
+const galleryList = document.querySelector('.gallery');
 
   const galleryItems = images.map(image => {
-    const li = document.createElement('li');
+    const listItem = document.createElement('li');
+    listItem.classList.add('gallery-item');
+
     const img = document.createElement('img');
-    
     img.src = image.url;
     img.alt = image.alt;
-    
-    li.appendChild(img);
-    return li;
+
+    listItem.appendChild(img);
+    return listItem;
   });
 
-  gallery.append(...galleryItems);
-});
+  galleryList.append(...galleryItems);
