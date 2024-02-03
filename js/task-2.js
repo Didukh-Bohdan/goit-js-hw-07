@@ -1,6 +1,9 @@
-const images = [
-  {
-    url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+  document.addEventListener('DOMContentLoaded', () => {
+  const gallery = document.querySelector('.gallery');
+  
+  const images = [
+    {
+      url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     alt: 'White and Black Long Fur Cat',
   },
   {
@@ -25,21 +28,20 @@ const images = [
     url:
       'https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     alt: 'Zebras on Zebra',
-  },
-];
+    },
+  ];
 
-const galleryList = document.querySelector('.gallery');
-
+  // Create and append gallery items to the ul element
   const galleryItems = images.map(image => {
-    const listItem = document.createElement('li');
-    listItem.classList.add('gallery-item');
-
+    const li = document.createElement('li');
     const img = document.createElement('img');
+    
     img.src = image.url;
     img.alt = image.alt;
-
-    listItem.appendChild(img);
-    return listItem;
+    
+    li.appendChild(img);
+    return li;
   });
 
-  galleryList.append(...galleryItems);
+  gallery.append(...galleryItems);
+});
