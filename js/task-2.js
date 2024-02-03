@@ -31,7 +31,6 @@
     },
   ];
 
-  // Create and append gallery items to the ul element
   const galleryItems = images.map(image => {
     const li = document.createElement('li');
     const img = document.createElement('img');
